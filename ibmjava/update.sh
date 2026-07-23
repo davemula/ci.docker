@@ -360,7 +360,7 @@ EOI
 EOI
 	fi
 	if [ "${os}" == "ubi-min" -o "${os}" == "ubi-micro" ]; then
-		cat >> $1 <<'EOI'
+	        cat >> $1 <<'EOI'
     microdnf -y remove shadow-utils; \
     microdnf clean all; \
 EOI
