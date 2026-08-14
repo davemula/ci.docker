@@ -53,8 +53,6 @@ RUN microdnf install -y \
     /mnt/rootfs/var/log/hawkey.log \
     /var/cache/dnf
 
-ENV JAVA_VERSION 8.0.8.70
-
 RUN set -eux; \
     microdnf -y install shadow-utils; \
     useradd -u 1001 -r -g 0 -s /usr/sbin/nologin default; \
@@ -111,5 +109,7 @@ LABEL org.opencontainers.image.authors="Jayashree Gopi" \
     run="docker run --rm -ti <image_name:tag> /bin/bash" \
     summary="Image for IBM JAVA with UBI 10 Micro as the base image" \
     description="This image contains the IBM JAVA with Red Hat UBI as the base OS.  For more information on this image please see https://github.com/ibmruntimes/ci.docker/blob/master/README.md"
+
+ENV JAVA_VERSION 8.0.8.70
 
 USER 1001
